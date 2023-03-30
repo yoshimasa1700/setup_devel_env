@@ -1,0 +1,9 @@
+- name: Download get-pip.py
+  get_url:
+    url: 'https://bootstrap.pypa.io/pip/2.7/get-pip.py'
+    dest: /tmp/get-pip.2.7.py
+
+- name: Install pip2
+  command: python2 get-pip.2.7.py
+  args:
+    chdir: /tmp

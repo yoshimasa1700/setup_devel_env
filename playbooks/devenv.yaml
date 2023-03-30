@@ -1,0 +1,17 @@
+- name: Setup environment.
+  remote_user: sony-dev
+  hosts: localhost
+  become: no
+  tasks:
+    - name: clone toyos_env
+      ansible.builtin.git:
+        repo: https://github.com/yoshimasa1700/toyos_env.git
+        dest: "/home/sony-dev/toyos_env"
+
+    - name: run setup scripts.
+      command:
+        "zsh /home/sony-dev/toyos_env/0_setup.zsh"
+
+    - name: run setup scripts.
+      command:
+        "zsh /home/sony-dev/toyos_env/1_setup_links.zsh"

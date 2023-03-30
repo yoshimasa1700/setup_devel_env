@@ -1,0 +1,9 @@
+- name: Download get-pip.py
+  get_url:
+    url: 'https://bootstrap.pypa.io/pip/get-pip.py'
+    dest: /tmp/get-pip.py
+
+- name: Install pip3
+  command: python3 get-pip.py
+  args:
+    chdir: /tmp

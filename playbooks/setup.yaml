@@ -1,0 +1,5 @@
+- name: install base env.
+  import_playbook: base.yaml
+
+- name: install dev env.
+  import_playbook: devenv.yaml

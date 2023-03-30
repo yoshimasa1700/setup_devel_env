@@ -1,0 +1,11 @@
+- name: install ffmpeg-python in python2.
+  pip:
+    executable: pip2
+    name:
+      - setuptools==44.1.1
+
+- name: install ffmpeg-python in python2.
+  pip:
+    executable: pip2
+    name:
+      - ffmpeg-python
