@@ -1,5 +1,4 @@
 - name: Setup environment.
-  remote_user: sony-dev
   hosts: localhost
   become: yes
   tasks:
@@ -16,9 +15,10 @@
           - build-essential
           - software-properties-common
 
-    - name: install emacs26.
-      include: task/emacs.yaml
-
     - name: change shell
       command:
-        "chsh sony-dev -s /bin/zsh"
+        "chsh {{ ansible_facts.env.USER }} -s /bin/zsh"
+
+
+    - name: install emacs
+      include: task/emacs.yaml

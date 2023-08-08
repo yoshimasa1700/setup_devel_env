@@ -1,11 +1,11 @@
-- name: add apt repository for emacs26
-  apt_repository:
-    repo: ppa:kelleyk/emacs
-    state: present
+# - name: add apt repository for emacs26
+#   apt_repository:
+#     repo: ppa:kelleyk/emacs
+#     state: present
 
-- name: install packages.
+- name: install emacs-nox.
   apt:
     autoclean: yes
     update_cache: yes
     name:
-      - emacs26
+      - emacs-nox
