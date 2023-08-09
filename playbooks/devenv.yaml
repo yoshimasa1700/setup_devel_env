@@ -14,5 +14,6 @@
       ignore_errors: true
 
     - name: run setup scripts.
-      command:
-        "zsh /home/{{ ansible_facts.env.USER }}/toyos_env/1_setup_links.zsh"
+      command: "zsh /home/{{ ansible_facts.env.USER }}/toyos_env/1_setup_links.zsh"
+      args:
+        chdir: "/home/{{ ansible_facts.env.USER }}/toyos_env"
